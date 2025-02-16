@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let car = new Array();
+			car[0] = 'x1';
+			car[1] = 'x2';
+			car[2] = 'x3';
+			car[3] = 'x4';
+			car[4] = 'x5';
+			car[5] = 'x6';
+			car[6] = 'x7';
+            let a = 0;
+
+			const pretBaza = 40000;
+			const diferentaPret = pretBaza * 0.1;
+
+			for (x in car) {
+				document.write(car[x] + ' ' + 'are pretul de ' + (pretBaza + diferentaPret * x) + '<br>');
+			}
+            document.write('<br>');
+			for (x of car) {
+				document.write(x + ' ' + 'are pretul de ' + (pretBaza + diferentaPret * a) + '<br>');
+                a++;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				text-align: center; 
+				font-family: monospace; 
+				white-space: pre-line; /* Păstrează line break-urile */
+			}
+			.zero {
+				color: red;
+				font-weight: bold;
+			} /* Culoare pentru "0" */
+			.at {
+				color: blue;
+				font-weight: bold;
+			} /* Culoare pentru "@" */
+			.plus {
+				color: green;
+			} /* Culoare pentru "+" */
+			span {
+				transition: color 0.5s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="output"></div>
+
+		<script>
+			function culoareAleatorie() {
+				return '#' + Math.floor(Math.random() * 16777215).toString(16); // Generare culoare hex aleatoare
+			}
+
+			let output = document.getElementById('output'); 
+			let stea = '+'.repeat(10);
+			let glob = '0+@';
+			let globStea = glob + stea;
+			globStea = globStea.repeat(150);
+			let grup;
+			let a = 0;
+			let b = 1;
+
+			for (let n = 0; n <= 7; n++) {
+				let a = n * n;
+				let b = (n + 1) * (n + 1);
+				let grup = globStea.substring(a, b);
+
+				//STILIZARE
+				let culoare0 = culoareAleatorie();
+				let culoareAt = culoareAleatorie();
+
+				grup = grup
+					.replace(/0/g, `<span style="color: ${culoare0}; font-weight: bold;">0</span>`)
+					.replace(/@/g, `<span style="color: ${culoareAt}; font-weight: bold;">@</span>`)
+					.replace(/\+/g, `<span class="plus">+</span>`); // "+" rămâne verde
+
+				//AFISARE
+				output.innerHTML += grup + '<br>';
+			}
+			for (let n = 5; n <= 12; n++) {
+				let a = n * n;
+				let b = (n + 1) * (n + 1);
+				let grup = globStea.substring(a, b);
+
+				//STILIZARE
+				let culoare0 = culoareAleatorie();
+				let culoareAt = culoareAleatorie();
+
+				grup = grup
+					.replace(/0/g, `<span style="color: ${culoare0}; font-weight: bold;">0</span>`)
+					.replace(/@/g, `<span style="color: ${culoareAt}; font-weight: bold;">@</span>`)
+					.replace(/\+/g, `<span class="plus">+</span>`); // "+" rămâne verde
+
+				//AFISARE
+				output.innerHTML += grup + '<br>';
+			}
+			for (let n = 13; n <= 20; n++) {
+				let a = n * n;
+				let b = (n + 1) * (n + 1);
+
+				let grup = globStea.substring(a, b - 6);
+
+				//STILIZARE
+				let culoare0 = culoareAleatorie();
+				let culoareAt = culoareAleatorie();
+
+				grup = grup
+					.replace(/0/g, `<span style="color: ${culoare0}; font-weight: bold;">0</span>`)
+					.replace(/@/g, `<span style="color: ${culoareAt}; font-weight: bold;">@</span>`)
+					.replace(/\+/g, `<span class="plus">+</span>`); // "+" rămâne verde
+
+				//AFISARE
+				output.innerHTML += grup + '<br>';
+			}
+			for (let n = 21; n <= 28; n++) {
+				let a = n * n;
+				let b = (n + 1) * (n + 1);
+				let grup = globStea.substring(a, b - 12);
+
+				//STILIZARE
+				let culoare0 = culoareAleatorie();
+				let culoareAt = culoareAleatorie();
+
+				grup = grup
+					.replace(/0/g, `<span style="color: ${culoare0}; font-weight: bold;">0</span>`)
+					.replace(/@/g, `<span style="color: ${culoareAt}; font-weight: bold;">@</span>`)
+					.replace(/\+/g, `<span class="plus">+</span>`); // "+" rămâne verde
+
+				//AFISARE
+				output.innerHTML += grup + '<br>';
+			}
+			for (let n = 29; n <= 36; n++) {
+				let a = n * n;
+				let b = (n + 1) * (n + 1);
+				let grup = globStea.substring(a, b - 19);
+
+				//STILIZARE
+				let culoare0 = culoareAleatorie();
+				let culoareAt = culoareAleatorie();
+
+				grup = grup
+					.replace(/0/g, `<span style="color: ${culoare0}; font-weight: bold;">0</span>`)
+					.replace(/@/g, `<span style="color: ${culoareAt}; font-weight: bold;">@</span>`)
+					.replace(/\+/g, `<span class="plus">+</span>`); // "+" rămâne verde
+
+				//AFISARE
+				output.innerHTML += grup + '<br>';
+			}
+
+			// TRUNCHI COPAC
+			for (let i = 0; i < 10; i++) {
+				output.innerHTML += '|#||#|' + '<br>';
+			}
+
+			// REFRESH PAGINA
+			setTimeout(function () {
+				location.reload(); 
+			}, 1000); 
+
+			// for (let i = 0; i < lungimeTotala; i++) {
+			// 	for (let j = 0; j < lungimeTotala; j += 2) {
+			// 		if (j == 0) {
+			// 			a = 0;
+			// 			b = 1;
+			// 			j = 1;
+			// 		} else {
+			// 			a = b;
+			// 			b = a + j;
+			// 		}
+
+			// 		grup = globStea.substring(a, b);
+			// 		grup += '<br>';
+			// 		document.write(grup);
+			// 	}
+			// }
+
+			// a = 1;
+			// b = 4;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 4;
+			// b = 9;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 9;
+			// b = 16;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 16;
+			// b = 25;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 25;
+			// b = 35;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 35;
+			// b = 47;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+			// a = 47;
+			// b = 61;
+			// for (let i = 0; i < 1; i++) {
+			// 	let grup = globStea.substring(a, b);
+			// 	let grupB = grup;
+			// 	grup += '<br>';
+			// 	document.write(grup);
+			// }
+		</script>
+	</body>
+</html>

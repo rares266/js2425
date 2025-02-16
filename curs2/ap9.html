@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let n;
+			let i = 0;
+			n = eval(prompt('Va rugam introduceti numarul n', 2));
+			//METODA 1
+			document.write(`AFISARE NUMERE IMPARE <br><br>`);
+			document.write(`Metoda 1 WHILE `);
+			while (i < n) {
+				if (i % 2 != 0) {
+					document.write(`${i}, `);
+				}
+				i++;
+			}
+
+			//METODA 2 FOR
+			document.write(`<br> Metoda 2 FOR `);
+			for (let i = 0; i < n; i++) {
+				if (i % 2 != 0) {
+					document.write(`${i}, `);
+				}
+			}
+
+			//METODA 3 DO WHILE
+			document.write(`<br> Metoda 3 DO WHILE `);
+			i = 0;
+			do {
+				if (i % 2 != 0) {
+					document.write(`${i}, `);
+				}
+				i++;
+			} while (i < n);
+
+            //METODA 4 WHILE FARA IF
+            document.write(`<br> Metoda 4 WHILE FARA IF `);
+            i = 1;
+            while(i <= n){
+                document.write(`${i}, `);
+                i += 2;
+            }
+		</script>
+	</body>
+</html>

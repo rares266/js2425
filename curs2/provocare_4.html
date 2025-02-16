@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let triangleOne = '*';
+			let triangleTwo;
+			let triangleThree;
+			let triangleFour;
+			let triangleFive;
+			//Ex 1
+			for (let i = 0; i < 8; i++) {
+				document.write(triangleOne + '<br>');
+				triangleOne = triangleOne + '**';
+				if (i == 4) {
+					triangleTwo = triangleOne;
+				}
+			}
+			for (let i = 0; i < 8; i++) {
+				document.write(triangleTwo + '<br>');
+				triangleTwo = triangleTwo + '**';
+				if (i == 4) {
+					triangleThree = triangleTwo;
+				}
+			}
+			for (let i = 0; i < 8; i++) {
+				document.write(triangleThree + '<br>');
+				triangleThree = triangleThree + '**';
+				if (i == 4) {
+					triangleFour = triangleThree;
+				}
+			}
+			for (let i = 0; i < 8; i++) {
+				document.write(triangleFour + '<br>');
+				triangleFour = triangleFour + '**';
+				if (i == 4) {
+					triangleFive = triangleFour;
+				}
+			}
+			for (let i = 0; i < 8; i++) {
+				document.write(triangleFive + '<br>');
+				triangleFive = triangleFive + '**';
+			}
+		</script>
+	</body>
+</html>
